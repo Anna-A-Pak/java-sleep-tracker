@@ -9,6 +9,7 @@ public class SleepLessNights implements Function<List<SleepSession>, SleepAnalys
     public static final LocalTime START_NIGHT = LocalTime.of(0, 0);
     public static final LocalTime END_NIGHT = LocalTime.of(6, 0);
     int result = 0;
+
     @Override
     public SleepAnalysisResult apply(List<SleepSession> sleepSessions) {
         List<SleepSession> sleepSessionsLessNights = sleepSessions.stream()

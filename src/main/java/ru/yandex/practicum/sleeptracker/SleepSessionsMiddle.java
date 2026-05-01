@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.function.Function;
 
 public class SleepSessionsMiddle implements Function<List<SleepSession>, SleepAnalysisResult> {
+
     @Override
     public SleepAnalysisResult apply(List<SleepSession> sleepSessions) {
         long result = sleepSessions.stream()
