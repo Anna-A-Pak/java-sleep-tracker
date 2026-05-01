@@ -13,6 +13,7 @@ public class SleepChronotype implements Function<List<SleepSession>, SleepAnalys
     int larkChronotype = 0;
     int doveChronotype = 0;
     Chronotype chronotype;
+
     @Override
     public SleepAnalysisResult apply(List<SleepSession> sleepSessions) {
         sleepSessions
