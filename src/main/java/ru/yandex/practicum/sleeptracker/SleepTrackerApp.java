@@ -39,7 +39,7 @@ public class SleepTrackerApp {
         listFunction.add(new SleepLessNights());
         listFunction.add(new SleepChronotype());
 
-        try(Stream<String> session = Files.lines(filePath, StandardCharsets.UTF_8)) {
+        try (Stream<String> session = Files.lines(filePath, StandardCharsets.UTF_8)) {
             List<SleepSession> sleepSessionsNew = session
                     .filter(line -> !line.isBlank())
                     .map(line -> checkLine(line, formatter))
