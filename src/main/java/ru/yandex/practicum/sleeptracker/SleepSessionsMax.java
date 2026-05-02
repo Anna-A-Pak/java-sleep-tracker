@@ -10,7 +10,7 @@ public class SleepSessionsMax implements Function<List<SleepSession>, SleepAnaly
         long result = sleepSessions.stream()
                 .mapToLong(SleepSession::getDurationToMinutes)
                 .max()
-                .orElseThrow(() -> new RuntimeException("Список сессий сна пустой!"));
+                .orElse(0);
         return new SleepAnalysisResult((int)result, "Максимальная продолжительность сессии (в минутах): ");
     }
 }

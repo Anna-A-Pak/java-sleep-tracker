@@ -22,7 +22,7 @@ public class SleepTrackerApp {
             return;
         }
 
-        if (args[0].isEmpty() || args[0].isBlank()) {
+        if (args[0].isBlank()) {
             System.out.println("Путь к файлу не должен быть пустым!");
             return;
         }
@@ -50,7 +50,6 @@ public class SleepTrackerApp {
             sleepSessions.addAll(sleepSessionsNew);
 
         } catch (IOException e) {
-            e.getStackTrace();
             System.out.println("Ошибка чтения файла!");
         }
 

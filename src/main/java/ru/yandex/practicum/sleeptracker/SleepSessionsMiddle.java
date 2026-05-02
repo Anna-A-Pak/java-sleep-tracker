@@ -7,14 +7,10 @@ public class SleepSessionsMiddle implements Function<List<SleepSession>, SleepAn
 
     @Override
     public SleepAnalysisResult apply(List<SleepSession> sleepSessions) {
-        long result = sleepSessions.stream()
+        double result = sleepSessions.stream()
                 .mapToLong(SleepSession::getDurationToMinutes)
-                .sum();
-        try {
-            result = result / sleepSessions.size();
-        } catch (IllegalAccessError e) {
-            throw new RuntimeException("Список сессий сна пустой!");
-        }
+                .average()
+                .orElse(0);
 
         return new SleepAnalysisResult((int) result, "Средняя продолжительность сессии (в минутах): ");
     }

@@ -10,7 +10,7 @@ public class SleepSessionsMin implements Function<List<SleepSession>, SleepAnaly
         long result = sleepSessions.stream()
                 .mapToLong(SleepSession::getDurationToMinutes)
                 .min()
-                .orElseThrow(() -> new RuntimeException("Список сессий сна пустой!"));
+                .orElse(0);
         return new SleepAnalysisResult((int) result, "Минимальная продолжительность сессии (в минутах): ");
     }
 }
